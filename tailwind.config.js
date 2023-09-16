@@ -10,7 +10,24 @@ export default {
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.vue",
     ],
-
+    safelist: [
+        "text-white",
+        "bg-white",
+        {
+            pattern:
+                /(bg|border|text)-(primary|secondary|success|danger|warning|info|gray)-(50|100|500|600|700)/,
+            variants: ["hover"],
+        },
+        {
+            pattern: /(bg|border|text)-deep-black/,
+            variants: ["hover"],
+        },
+        {
+            pattern: /(bg|border|text)-transparent/,
+            variants: ["hover"],
+        },
+        "flex-wrap",
+    ],
     theme: {
         extend: {
             fontFamily: {
@@ -19,6 +36,33 @@ export default {
                 money: ["DM Mono", ...defaultTheme.fontFamily.serif],
             },
             colors: {
+                primary: {
+                    DEFAULT: "#06b6d4",
+                    50: "#f3fbfd",
+                    100: "#c3edf5",
+                    200: "#94e0ed",
+                    300: "#65d2e4",
+                    400: "#35c4dc",
+                    500: "#06b6d4",
+                    600: "#059bb4",
+                    700: "#047f94",
+                    800: "#036475",
+                    900: "#024955",
+                },
+                secondary: {
+                    DEFAULT: "#f24172",
+                    50: "#fff1f4",
+                    100: "#ffe4e9",
+                    200: "#fecdd8",
+                    300: "#fca5b9",
+                    400: "#fa7295",
+                    500: "#f24172",
+                    600: "#d81e5b",
+                    700: "#bc144f",
+                    800: "#9e1349",
+                    900: "#871443",
+                    950: "#4b0620",
+                },
                 "paper-white": {
                     DEFAULT: "#F8F9FD",
                 },

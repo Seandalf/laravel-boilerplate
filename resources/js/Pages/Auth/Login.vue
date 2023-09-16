@@ -19,11 +19,16 @@
 
             <div class="mb-3">
                 <PlainTextInput
-                    prefix-icon="account"
+                    prefix-icon="lock"
                     type="password"
                     v-model="form.password"
                     label="Password"
+                    disabled
                 />
+            </div>
+
+            <div class="mb-3">
+                <GenericButton label="Login" colour="secondary" full-width />
             </div>
         </form>
     </GuestLayout>
@@ -32,6 +37,7 @@
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
 
+import GenericButton from "@/Components/GenericButton.vue";
 import InputLabel from "@/Components/Input/InputLabel.vue";
 import PlainTextInput from "@/Components/Input/PlainTextInput.vue";
 import { ValidationStatus } from "@/Enum/ValidationStatus";
@@ -47,6 +53,7 @@ export default defineComponent({
         Link,
         InputLabel,
         PlainTextInput,
+        GenericButton,
     },
     props: {
         canResetPassword: {

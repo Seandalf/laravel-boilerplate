@@ -25,6 +25,11 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/components', function () {
+    return Inertia::render('ComponentList');
+});
+
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
