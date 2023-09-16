@@ -37,6 +37,11 @@ const submit = () => {
             {{ status }}
         </div>
         <Button label="Submit" />
+
+        <div class="font-sans font-light">
+            This is some text to test the default font
+        </div>
+
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />
