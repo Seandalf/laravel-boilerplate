@@ -33,7 +33,7 @@
         </div>
         <div class="flex-1">
             <input
-                type="text"
+                :type="type"
                 :value="modelValue"
                 :placeholder="placeholder"
                 @input="$emit('update:modelValue', $event.target?.value)"
@@ -119,6 +119,10 @@ export default defineComponent({
         label: {
             type: String,
             default: null,
+        },
+        type: {
+            type: String,
+            default: "text",
         },
     },
     emits: ["update:modelValue"],

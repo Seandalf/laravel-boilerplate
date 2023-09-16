@@ -2,15 +2,29 @@
     <GuestLayout>
         <Head title="Log in" />
 
+        <div class="font-title text-2xl font-medium text-center mb-3">
+            Login to your account
+        </div>
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
         <form @submit.prevent="submit">
-            <PlainTextInput
-                prefix-icon="account"
-                v-model="form.username"
-                label="Email"
-            />
+            <div class="mb-3">
+                <PlainTextInput
+                    prefix-icon="account"
+                    v-model="form.username"
+                    label="Email"
+                />
+            </div>
+
+            <div class="mb-3">
+                <PlainTextInput
+                    prefix-icon="account"
+                    type="password"
+                    v-model="form.password"
+                    label="Password"
+                />
+            </div>
         </form>
     </GuestLayout>
 </template>

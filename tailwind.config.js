@@ -15,6 +15,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                title: ["Urbanist", ...defaultTheme.fontFamily.sans],
+                money: ["DM Mono", ...defaultTheme.fontFamily.serif],
             },
             colors: {
                 "paper-white": {

@@ -1,6 +1,6 @@
 <template>
     <label
-        class="font-bold"
+        class="font-bold font-title"
         :class="{
             'text-deep-black': status === ValidationStatus.Normal,
             'text-danger': status === ValidationStatus.Error,
