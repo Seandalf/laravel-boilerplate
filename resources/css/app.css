@@ -1,4 +1,7 @@
-@import url("beatrice-font.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.stem__input-group {
+    @apply flex items-center border rounded py-1 px-2 font-sans;
+}
