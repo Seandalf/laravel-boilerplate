@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0);
+    scrollbar-width: 8px;
+}
+
+*:hover {
+    scrollbar-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+*:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .stem__input-group {
-    @apply flex items-center border rounded py-1 px-2 font-sans;
+    @apply flex items-center border rounded py-1 px-2 font-sans min-h-[44px] min-w-[200px] bg-white disabled:bg-gray-100;
 }

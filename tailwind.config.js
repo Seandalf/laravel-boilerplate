@@ -27,6 +27,7 @@ export default {
             variants: ["hover"],
         },
         "flex-wrap",
+        "transition-transform",
     ],
     theme: {
         extend: {
