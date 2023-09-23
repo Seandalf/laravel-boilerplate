@@ -6,4 +6,5 @@ export enum ButtonColour {
     Warning = "warning",
     Info = "info",
     Black = "deep-black",
+    Gray = "gray",
 }

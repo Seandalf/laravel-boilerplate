@@ -247,19 +247,124 @@
                 <div><PlainTextInput label="Warning" status="warning" /></div>
                 <div><PlainTextInput label="Success" status="success" /></div>
             </div>
+
+            <h3
+                class="font-title font-bold text-secondary-600 text-2xl pb-3 border-b border-gray-200 my-4 mt-6"
+            >
+                Checkboxes
+            </h3>
+
+            <h6 class="font-bold text-base text-deep-black my-3">Inputs</h6>
+
+            <div class="flex gap-4 flex-wrap">
+                <CheckboxInput label="Standard" v-model="isChecked.first" />
+                <CheckboxInput
+                    label="Large Switch"
+                    v-model="isChecked.second"
+                    size="large"
+                    is-switch
+                />
+                <CheckboxInput
+                    label="Regular Switch"
+                    v-model="isChecked.third"
+                    size="regular"
+                    is-switch
+                />
+                <CheckboxInput
+                    label="Small Switch"
+                    v-model="isChecked.fourth"
+                    size="small"
+                    is-switch
+                />
+                <CheckboxInput
+                    label="X-Small Switch"
+                    v-model="isChecked.fifth"
+                    size="x-small"
+                    is-switch
+                />
+                <CheckboxInput
+                    label="Custom off colour"
+                    v-model="isChecked.sixth"
+                    size="x-small"
+                    :off-colour="ButtonColour.Danger"
+                    is-switch
+                />
+                <CheckboxInput
+                    label="Custom on colour"
+                    v-model="isChecked.seventh"
+                    size="x-small"
+                    :on-colour="ButtonColour.Success"
+                    is-switch
+                />
+            </div>
+
+            <h6 class="font-bold text-base text-deep-black my-3">Statuses</h6>
+
+            <div class="flex gap-4 flex-wrap">
+                <CheckboxInput
+                    label="Disabled"
+                    v-model="isChecked.eighth"
+                    disabled
+                />
+                <CheckboxInput
+                    label="Error"
+                    v-model="isChecked.ninth"
+                    status="danger"
+                />
+                <CheckboxInput
+                    label="Warning"
+                    v-model="isChecked.tenth"
+                    status="warning"
+                />
+                <CheckboxInput
+                    label="Success"
+                    v-model="isChecked.eleventh"
+                    status="success"
+                />
+                <CheckboxInput
+                    label="Disabled"
+                    v-model="isChecked.twelfth"
+                    size="x-small"
+                    is-switch
+                    disabled
+                />
+                <CheckboxInput
+                    label="Error"
+                    v-model="isChecked.thirteenth"
+                    size="x-small"
+                    is-switch
+                    status="danger"
+                />
+                <CheckboxInput
+                    label="Warning"
+                    v-model="isChecked.fourteenth"
+                    size="x-small"
+                    is-switch
+                    status="warning"
+                />
+                <CheckboxInput
+                    label="Success"
+                    v-model="isChecked.fifteenth"
+                    size="x-small"
+                    is-switch
+                    status="success"
+                />
+            </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, reactive, ref } from "vue";
 
 import GenericButton from "@/Components/GenericButton.vue";
+import CheckboxInput from "@/Components/Input/CheckboxInput.vue";
 import PlainTextInput from "@/Components/Input/PlainTextInput.vue";
 import SelectInput from "@/Components/Input/SelectInput.vue";
+import { ButtonColour } from "@/Enum/Button/ButtonColour";
 
 export default defineComponent({
-    components: { GenericButton, PlainTextInput, SelectInput },
+    components: { GenericButton, PlainTextInput, SelectInput, CheckboxInput },
     setup() {
         const selectItems = [
             {
@@ -283,8 +388,25 @@ export default defineComponent({
                 value: 5,
             },
         ];
+        const isChecked = reactive<Record<string, boolean>>({
+            first: false,
+            second: false,
+            third: false,
+            fourth: false,
+            fifth: false,
+            sixth: false,
+            seventh: false,
+            eighth: false,
+            ninth: false,
+            tenth: false,
+            eleventh: false,
+            twelfth: false,
+            thirteenth: false,
+            fourteenth: false,
+            fifteenth: false,
+        });
 
-        return { selectItems };
+        return { selectItems, isChecked, ButtonColour };
     },
 });
 </script>

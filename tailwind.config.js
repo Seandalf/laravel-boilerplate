@@ -15,7 +15,7 @@ export default {
         "bg-white",
         {
             pattern:
-                /(bg|border|text)-(primary|secondary|success|danger|warning|info|gray)-(50|100|500|600|700)/,
+                /(bg|border|text)-(primary|secondary|success|danger|warning|info|gray)-(50|100|300|500|600|700)/,
             variants: ["hover"],
         },
         {
@@ -28,6 +28,7 @@ export default {
         },
         "flex-wrap",
         "transition-transform",
+        "hidden",
     ],
     theme: {
         extend: {
