@@ -350,6 +350,37 @@
                     status="success"
                 />
             </div>
+
+            <h3
+                class="font-title font-bold text-secondary-600 text-2xl pb-3 border-b border-gray-200 my-4 mt-6"
+            >
+                Currency Input
+            </h3>
+
+            <h6 class="font-bold text-base text-deep-black my-3">Inputs</h6>
+
+            <div class="flex gap-4 flex-wrap">
+                <CurrencyInput label="Standard" />
+                <CurrencyInput label="GBP Symbol" symbol="&pound;" />
+                <CurrencyInput label="EUR Symbol" symbol="&euro;" />
+                <CurrencyInput label="Yen Symbol" symbol="&yen;" />
+            </div>
+
+            <h6 class="font-bold text-base text-deep-black my-3">States</h6>
+
+            <div class="flex gap-4 flex-wrap">
+                <CurrencyInput label="Loading" is-loading />
+                <CurrencyInput label="Disabled" disabled />
+                <CurrencyInput label="Error" :status="ValidationStatus.Error" />
+                <CurrencyInput
+                    label="Warning"
+                    :status="ValidationStatus.Warning"
+                />
+                <CurrencyInput
+                    label="Success"
+                    :status="ValidationStatus.Success"
+                />
+            </div>
         </div>
     </div>
 </template>
@@ -359,12 +390,20 @@ import { defineComponent, reactive, ref } from "vue";
 
 import GenericButton from "@/Components/GenericButton.vue";
 import CheckboxInput from "@/Components/Input/CheckboxInput.vue";
+import CurrencyInput from "@/Components/Input/CurrencyInput.vue";
 import PlainTextInput from "@/Components/Input/PlainTextInput.vue";
 import SelectInput from "@/Components/Input/SelectInput.vue";
 import { ButtonColour } from "@/Enum/Button/ButtonColour";
+import { ValidationStatus } from "@/Enum/ValidationStatus";
 
 export default defineComponent({
-    components: { GenericButton, PlainTextInput, SelectInput, CheckboxInput },
+    components: {
+        GenericButton,
+        PlainTextInput,
+        SelectInput,
+        CheckboxInput,
+        CurrencyInput,
+    },
     setup() {
         const selectItems = [
             {
@@ -406,7 +445,7 @@ export default defineComponent({
             fifteenth: false,
         });
 
-        return { selectItems, isChecked, ButtonColour };
+        return { selectItems, isChecked, ButtonColour, ValidationStatus };
     },
 });
 </script>
