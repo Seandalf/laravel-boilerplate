@@ -32,6 +32,9 @@ export default {
     ],
     theme: {
         extend: {
+            backdropBlur: {
+                xs: "1px",
+            },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
                 title: ["Urbanist", ...defaultTheme.fontFamily.sans],

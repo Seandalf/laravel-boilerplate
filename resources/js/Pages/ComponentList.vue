@@ -381,6 +381,48 @@
                     :status="ValidationStatus.Success"
                 />
             </div>
+
+            <h3
+                class="font-title font-bold text-secondary-600 text-2xl pb-3 border-b border-gray-200 my-4 mt-6"
+            >
+                Date Input
+            </h3>
+
+            <h6 class="font-bold text-base text-deep-black my-3">Inputs</h6>
+
+            <div class="flex gap-4 flex-wrap"></div>
+
+            <h6 class="font-bold text-base text-deep-black my-3">States</h6>
+
+            <div class="flex gap-4 flex-wrap"></div>
+
+            <h3
+                class="font-title font-bold text-secondary-600 text-2xl pb-3 border-b border-gray-200 my-4 mt-6"
+            >
+                Modals
+            </h3>
+
+            <div class="flex gap-4 flex-wrap">
+                <GenericButton label="Primary" @click="openDefaultModal" />
+            </div>
+
+            <Modal ref="defaultModal">
+                <template #footer>
+                    <GenericButton
+                        :size="ButtonSize.Small"
+                        :colour="ButtonColour.Black"
+                        :button-style="ButtonStyle.Outline"
+                        label="Close"
+                        @click="closeDefaultModal"
+                    />
+                    <GenericButton
+                        :size="ButtonSize.Small"
+                        :colour="ButtonColour.Black"
+                        label="Save"
+                        @click="closeDefaultModal"
+                    />
+                </template>
+            </Modal>
         </div>
     </div>
 </template>
@@ -393,7 +435,10 @@ import CheckboxInput from "@/Components/Input/CheckboxInput.vue";
 import CurrencyInput from "@/Components/Input/CurrencyInput.vue";
 import PlainTextInput from "@/Components/Input/PlainTextInput.vue";
 import SelectInput from "@/Components/Input/SelectInput.vue";
+import Modal from "@/Components/Modal/Modal.vue";
 import { ButtonColour } from "@/Enum/Button/ButtonColour";
+import { ButtonSize } from "@/Enum/Button/ButtonSIze";
+import { ButtonStyle } from "@/Enum/Button/ButtonStyle";
 import { ValidationStatus } from "@/Enum/ValidationStatus";
 
 export default defineComponent({
@@ -403,8 +448,11 @@ export default defineComponent({
         SelectInput,
         CheckboxInput,
         CurrencyInput,
+        Modal,
     },
     setup() {
+        const defaultModal = ref<typeof Modal>();
+
         const selectItems = [
             {
                 label: "Option 1",
@@ -445,7 +493,29 @@ export default defineComponent({
             fifteenth: false,
         });
 
-        return { selectItems, isChecked, ButtonColour, ValidationStatus };
+        const openDefaultModal = () => {
+            if (defaultModal.value) {
+                defaultModal.value.openModal();
+            }
+        };
+
+        const closeDefaultModal = () => {
+            if (defaultModal.value) {
+                defaultModal.value.closeModal();
+            }
+        };
+
+        return {
+            selectItems,
+            isChecked,
+            ButtonColour,
+            ValidationStatus,
+            defaultModal,
+            openDefaultModal,
+            ButtonSize,
+            ButtonStyle,
+            closeDefaultModal,
+        };
     },
 });
 </script>

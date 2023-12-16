@@ -119,11 +119,11 @@ export default defineComponent({
         const sizeClasses = computed<string>(() => {
             switch (props.size) {
                 case ButtonSize.Small:
-                    return "text-sm px-2 py-1";
-                case ButtonSize.Regular:
-                    return "text-base px-3 py-2";
+                    return "text-base px-4 py-1";
                 case ButtonSize.Large:
                     return "text-lg px-4 py-3";
+                default:
+                    return "text-base px-4 py-2";
             }
         });
 
