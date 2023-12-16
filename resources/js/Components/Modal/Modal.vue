@@ -37,7 +37,7 @@
                 </div>
 
                 <div
-                    class="p-6 border-b border-gray-100 overflow-y-scroll"
+                    class="border-b border-gray-100 overflow-y-scroll"
                     :style="`max-height: ${contentMaxHeight}px`"
                 >
                     <slot name="body" />
@@ -82,14 +82,14 @@ export default defineComponent({
     },
     setup(props) {
         const isOpen = ref<boolean>(false);
-        const modalOpacity = ref<Number>(0);
+        const modalOpacity = ref<number>(0);
         const opacityTimeout = ref();
 
-        const modalMaxHeight = computed<Number>(() => {
+        const modalMaxHeight = computed<number>(() => {
             return window.innerHeight - 100;
         });
 
-        const contentMaxHeight = computed<Number>(() => {
+        const contentMaxHeight = computed<number>(() => {
             return modalMaxHeight.value - 120;
         });
 
@@ -104,7 +104,7 @@ export default defineComponent({
                 } else {
                     modalOpacity.value = modalOpacity.value + 4;
                 }
-            }, 1);
+            }, 10);
         };
 
         const closeModal = () => {

@@ -129,7 +129,7 @@
             v-on:itemSelected="addItem($event)"
             v-on:closeDropdown="settings.expanded = false"
             v-on:clickedSearch="dropdownSearchClicked"
-            v-on:addNew="onAddNew"
+            v-on:addNew="onAddNew()"
         />
     </div>
 </template>
@@ -177,7 +177,7 @@ export default defineComponent({
             default: false,
         },
         placeholder: {
-            type: Text,
+            type: String,
             default: null,
         },
         status: {

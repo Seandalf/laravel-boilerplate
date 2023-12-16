@@ -19,30 +19,6 @@
                     'border-success': status === ValidationStatus.Success,
                 }"
             >
-                <div
-                    v-if="prefixIcon"
-                    class="flex-0 text-xl pr-2"
-                    :class="{
-                        'text-gray-300': status === ValidationStatus.Normal,
-                        'text-danger': status === ValidationStatus.Error,
-                        'text-warning': status === ValidationStatus.Warning,
-                        'text-success': status === ValidationStatus.Success,
-                    }"
-                >
-                    <span :class="`mdi mdi-${prefixIcon}`"></span>
-                </div>
-                <div
-                    v-if="prefixContent"
-                    class="flex-0 text-base pr-2 font-bold"
-                    :class="{
-                        'text-gray-300': status === ValidationStatus.Normal,
-                        'text-danger': status === ValidationStatus.Error,
-                        'text-warning': status === ValidationStatus.Warning,
-                        'text-success': status === ValidationStatus.Success,
-                    }"
-                >
-                    {{ prefixContent }}
-                </div>
                 <div class="flex-1">
                     <input
                         :type="type"
@@ -50,10 +26,7 @@
                         :placeholder="placeholder"
                         :disabled="disabled"
                         @input="
-                            $emit(
-                                'update:modelValue',
-                                (<HTMLInputElement>$event.target).value
-                            )
+                            $emit('update:modelValue', $event.target?.value)
                         "
                         class="w-full p-0 m-0 border-0 focus:ring-0 focus:outline-none text-sm"
                         @keypress="onKeypress"
@@ -76,24 +49,6 @@
                     class="flex-0 text-xl pl-2 text-success"
                 >
                     <span class="mdi mdi-check"></span>
-                </div>
-                <div
-                    v-if="suffixIcon"
-                    class="flex-0 text-xl pl-2"
-                    :class="{
-                        'text-gray-300': status === ValidationStatus.Normal,
-                        'text-danger': status === ValidationStatus.Error,
-                        'text-warning': status === ValidationStatus.Warning,
-                        'text-success': status === ValidationStatus.Success,
-                    }"
-                >
-                    <span :class="`mdi mdi-${suffixIcon}`"></span>
-                </div>
-                <div
-                    v-if="suffixContent"
-                    class="flex-0 text-base text-gray-400 pl-2 font-bold"
-                >
-                    {{ suffixContent }}
                 </div>
                 <div v-if="isLoading" class="flex-0">
                     <span class="mdi mdi-loading mdi-spin"></span>
@@ -118,7 +73,7 @@ import { ValidationStatus } from "@/Enum/ValidationStatus";
 import InputLabel from "./InputLabel.vue";
 
 export default defineComponent({
-    name: "plain-text-input",
+    name: "date-input",
     components: { InputLabel },
     props: {
         modelValue: {
@@ -149,7 +104,7 @@ export default defineComponent({
             default: false,
         },
         placeholder: {
-            type: String,
+            type: Text,
             default: null,
         },
         status: {
@@ -169,8 +124,9 @@ export default defineComponent({
             default: (payload: KeyboardEvent): void => {},
         },
         errorMessage: {
-            type: String as PropType<string | null>,
+            type: [String],
             default: null,
+            required: false,
         },
     },
     emits: ["update:modelValue"],

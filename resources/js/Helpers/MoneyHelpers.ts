@@ -7,7 +7,7 @@ export const onlyNumber = (e: KeyboardEvent): boolean => {
         return false;
     }
 
-    if (keyCode === 46 && e.target.value.includes(".")) {
+    if (keyCode === 46 && (e.target as HTMLInputElement).value.includes(".")) {
         // 46 is dot. We only need one dot in a number, so if
         // one exists, don't allow another
         e.preventDefault();
@@ -15,7 +15,7 @@ export const onlyNumber = (e: KeyboardEvent): boolean => {
         return false;
     }
 
-    if (keyCode === 45 && e.target.value.length > 0) {
+    if (keyCode === 45 && (e.target as HTMLInputElement).value.length > 0) {
         // 45 is -. We only allow one and it must be at the start
         e.preventDefault();
 
@@ -27,7 +27,7 @@ export const onlyNumber = (e: KeyboardEvent): boolean => {
 
 export const onlyCurrency = (e: KeyboardEvent): void => {
     if (onlyNumber(e)) {
-        let number = e.target.value;
+        let number = (e.target as HTMLInputElement).value;
         let split = number.split(".");
 
         if (split[1] && split[1].length === 2) {

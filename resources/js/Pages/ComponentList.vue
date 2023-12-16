@@ -13,77 +13,90 @@
 
             <div class="flex gap-4 flex-wrap">
                 <GenericButton label="Primary" />
-                <GenericButton label="Secondary" colour="secondary" />
-                <GenericButton label="Success" colour="success" />
-                <GenericButton label="Danger" colour="danger" />
-                <GenericButton label="Warning" colour="warning" />
-                <GenericButton label="Info" colour="info" />
-                <GenericButton label="Black" colour="deep-black" />
+                <GenericButton
+                    label="Secondary"
+                    :colour="ButtonColour.Secondary"
+                />
+                <GenericButton label="Success" :colour="ButtonColour.Success" />
+                <GenericButton label="Danger" :colour="ButtonColour.Danger" />
+                <GenericButton label="Warning" :colour="ButtonColour.Warning" />
+                <GenericButton label="Info" :colour="ButtonColour.Info" />
+                <GenericButton label="Black" :colour="ButtonColour.Black" />
             </div>
 
             <h6 class="font-bold text-base text-deep-black my-3">Outline</h6>
             <div class="flex gap-4 flex-wrap">
-                <GenericButton label="Primary" button-style="outline" />
+                <GenericButton
+                    label="Primary"
+                    :buttonStyle="ButtonStyle.Outline"
+                />
                 <GenericButton
                     label="Secondary"
-                    colour="secondary"
-                    button-style="outline"
+                    :colour="ButtonColour.Secondary"
+                    :buttonStyle="ButtonStyle.Outline"
                 />
                 <GenericButton
                     label="Success"
-                    colour="success"
-                    button-style="outline"
+                    :colour="ButtonColour.Success"
+                    :buttonStyle="ButtonStyle.Outline"
                 />
                 <GenericButton
                     label="Danger"
-                    colour="danger"
-                    button-style="outline"
+                    :colour="ButtonColour.Danger"
+                    :buttonStyle="ButtonStyle.Outline"
                 />
                 <GenericButton
                     label="Warning"
-                    colour="warning"
-                    button-style="outline"
+                    :colour="ButtonColour.Warning"
+                    :buttonStyle="ButtonStyle.Outline"
                 />
                 <GenericButton
                     label="Info"
-                    colour="info"
-                    button-style="outline"
+                    :colour="ButtonColour.Info"
+                    :buttonStyle="ButtonStyle.Outline"
                 />
                 <GenericButton
                     label="Black"
-                    colour="deep-black"
-                    button-style="outline"
+                    :colour="ButtonColour.Black"
+                    :buttonStyle="ButtonStyle.Outline"
                 />
             </div>
 
             <h6 class="font-bold text-base text-deep-black my-3">Link</h6>
             <div class="flex gap-4 flex-wrap">
-                <GenericButton label="Primary" button-style="link" />
+                <GenericButton
+                    label="Primary"
+                    :buttonStyle="ButtonStyle.Link"
+                />
                 <GenericButton
                     label="Secondary"
-                    colour="secondary"
-                    button-style="link"
+                    :colour="ButtonColour.Secondary"
+                    :buttonStyle="ButtonStyle.Link"
                 />
                 <GenericButton
                     label="Success"
-                    colour="success"
-                    button-style="link"
+                    :colour="ButtonColour.Success"
+                    :buttonStyle="ButtonStyle.Link"
                 />
                 <GenericButton
                     label="Danger"
-                    colour="danger"
-                    button-style="link"
+                    :colour="ButtonColour.Danger"
+                    :buttonStyle="ButtonStyle.Link"
                 />
                 <GenericButton
                     label="Warning"
-                    colour="warning"
-                    button-style="link"
+                    :colour="ButtonColour.Warning"
+                    :buttonStyle="ButtonStyle.Link"
                 />
-                <GenericButton label="Info" colour="info" button-style="link" />
+                <GenericButton
+                    label="Info"
+                    :colour="ButtonColour.Info"
+                    :buttonStyle="ButtonStyle.Link"
+                />
                 <GenericButton
                     label="Black"
-                    colour="deep-black"
-                    button-style="link"
+                    :colour="ButtonColour.Black"
+                    :buttonStyle="ButtonStyle.Link"
                 />
             </div>
 
@@ -95,32 +108,32 @@
                 <GenericButton label="Primary" suffix-icon="arrow-right" />
                 <GenericButton
                     label="Secondary"
-                    colour="secondary"
+                    :colour="ButtonColour.Secondary"
                     suffix-icon="arrow-right"
                 />
                 <GenericButton
                     label="Success"
-                    colour="success"
+                    :colour="ButtonColour.Success"
                     suffix-icon="arrow-right"
                 />
                 <GenericButton
                     label="Danger"
-                    colour="danger"
+                    :colour="ButtonColour.Danger"
                     suffix-icon="arrow-right"
                 />
                 <GenericButton
                     label="Warning"
-                    colour="warning"
+                    :colour="ButtonColour.Warning"
                     suffix-icon="arrow-right"
                 />
                 <GenericButton
                     label="Info"
-                    colour="info"
+                    :colour="ButtonColour.Info"
                     suffix-icon="arrow-right"
                 />
                 <GenericButton
                     label="Black"
-                    colour="deep-black"
+                    :colour="ButtonColour.Black"
                     suffix-icon="arrow-right"
                 />
             </div>
@@ -133,32 +146,32 @@
                 <GenericButton label="Primary" prefix-icon="lock" />
                 <GenericButton
                     label="Secondary"
-                    colour="secondary"
+                    :colour="ButtonColour.Secondary"
                     prefix-icon="pencil"
                 />
                 <GenericButton
                     label="Success"
-                    colour="success"
+                    :colour="ButtonColour.Success"
                     prefix-icon="check"
                 />
                 <GenericButton
                     label="Danger"
-                    colour="danger"
+                    :colour="ButtonColour.Danger"
                     prefix-icon="delete"
                 />
                 <GenericButton
                     label="Warning"
-                    colour="warning"
+                    :colour="ButtonColour.Warning"
                     prefix-icon="alert-box"
                 />
                 <GenericButton
                     label="Info"
-                    colour="info"
+                    :colour="ButtonColour.Info"
                     prefix-icon="information"
                 />
                 <GenericButton
                     label="Black"
-                    colour="deep-black"
+                    :colour="ButtonColour.Black"
                     prefix-icon="archive"
                 />
             </div>
@@ -167,7 +180,11 @@
 
             <div class="flex gap-4 flex-wrap">
                 <GenericButton label="Primary" is-loading />
-                <GenericButton label="Disabled" colour="secondary" disabled />
+                <GenericButton
+                    label="Disabled"
+                    :colour="ButtonColour.Secondary"
+                    disabled
+                />
             </div>
 
             <h3
@@ -198,17 +215,17 @@
                 <SelectInput
                     label="Error"
                     :items="selectItems"
-                    status="danger"
+                    :status="ValidationStatus.Error"
                 />
                 <SelectInput
                     label="Warning"
                     :items="selectItems"
-                    status="warning"
+                    :status="ValidationStatus.Warning"
                 />
                 <SelectInput
                     label="Success"
                     :items="selectItems"
-                    status="success"
+                    :status="ValidationStatus.Success"
                 />
             </div>
 
@@ -243,112 +260,24 @@
                     <PlainTextInput label="Loading" is-loading />
                 </div>
                 <div><PlainTextInput label="Disabled" disabled /></div>
-                <div><PlainTextInput label="Error" status="danger" /></div>
-                <div><PlainTextInput label="Warning" status="warning" /></div>
-                <div><PlainTextInput label="Success" status="success" /></div>
-            </div>
-
-            <h3
-                class="font-title font-bold text-secondary-600 text-2xl pb-3 border-b border-gray-200 my-4 mt-6"
-            >
-                Checkboxes
-            </h3>
-
-            <h6 class="font-bold text-base text-deep-black my-3">Inputs</h6>
-
-            <div class="flex gap-4 flex-wrap">
-                <CheckboxInput label="Standard" v-model="isChecked.first" />
-                <CheckboxInput
-                    label="Large Switch"
-                    v-model="isChecked.second"
-                    size="large"
-                    is-switch
-                />
-                <CheckboxInput
-                    label="Regular Switch"
-                    v-model="isChecked.third"
-                    size="regular"
-                    is-switch
-                />
-                <CheckboxInput
-                    label="Small Switch"
-                    v-model="isChecked.fourth"
-                    size="small"
-                    is-switch
-                />
-                <CheckboxInput
-                    label="X-Small Switch"
-                    v-model="isChecked.fifth"
-                    size="x-small"
-                    is-switch
-                />
-                <CheckboxInput
-                    label="Custom off colour"
-                    v-model="isChecked.sixth"
-                    size="x-small"
-                    :off-colour="ButtonColour.Danger"
-                    is-switch
-                />
-                <CheckboxInput
-                    label="Custom on colour"
-                    v-model="isChecked.seventh"
-                    size="x-small"
-                    :on-colour="ButtonColour.Success"
-                    is-switch
-                />
-            </div>
-
-            <h6 class="font-bold text-base text-deep-black my-3">Statuses</h6>
-
-            <div class="flex gap-4 flex-wrap">
-                <CheckboxInput
-                    label="Disabled"
-                    v-model="isChecked.eighth"
-                    disabled
-                />
-                <CheckboxInput
-                    label="Error"
-                    v-model="isChecked.ninth"
-                    status="danger"
-                />
-                <CheckboxInput
-                    label="Warning"
-                    v-model="isChecked.tenth"
-                    status="warning"
-                />
-                <CheckboxInput
-                    label="Success"
-                    v-model="isChecked.eleventh"
-                    status="success"
-                />
-                <CheckboxInput
-                    label="Disabled"
-                    v-model="isChecked.twelfth"
-                    size="x-small"
-                    is-switch
-                    disabled
-                />
-                <CheckboxInput
-                    label="Error"
-                    v-model="isChecked.thirteenth"
-                    size="x-small"
-                    is-switch
-                    status="danger"
-                />
-                <CheckboxInput
-                    label="Warning"
-                    v-model="isChecked.fourteenth"
-                    size="x-small"
-                    is-switch
-                    status="warning"
-                />
-                <CheckboxInput
-                    label="Success"
-                    v-model="isChecked.fifteenth"
-                    size="x-small"
-                    is-switch
-                    status="success"
-                />
+                <div>
+                    <PlainTextInput
+                        label="Error"
+                        :status="ValidationStatus.Error"
+                    />
+                </div>
+                <div>
+                    <PlainTextInput
+                        label="Warning"
+                        :status="ValidationStatus.Warning"
+                    />
+                </div>
+                <div>
+                    <PlainTextInput
+                        label="Success"
+                        :status="ValidationStatus.Success"
+                    />
+                </div>
             </div>
 
             <h3
@@ -431,7 +360,6 @@
 import { defineComponent, reactive, ref } from "vue";
 
 import GenericButton from "@/Components/GenericButton.vue";
-import CheckboxInput from "@/Components/Input/CheckboxInput.vue";
 import CurrencyInput from "@/Components/Input/CurrencyInput.vue";
 import PlainTextInput from "@/Components/Input/PlainTextInput.vue";
 import SelectInput from "@/Components/Input/SelectInput.vue";
@@ -446,7 +374,6 @@ export default defineComponent({
         GenericButton,
         PlainTextInput,
         SelectInput,
-        CheckboxInput,
         CurrencyInput,
         Modal,
     },

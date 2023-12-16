@@ -77,7 +77,7 @@ export default defineComponent({
                 }
                 if (
                     typeof item.value === "number" &&
-                    item.value == filterValue.value
+                    item.value == parseInt(filterValue.value)
                 ) {
                     return true;
                 }
@@ -89,7 +89,11 @@ export default defineComponent({
                 }
                 if (typeof item.value === "object") {
                     for (const prop in item.value) {
-                        if (item.value[prop].includes(filterValue.value)) {
+                        if (
+                            (item.value as any)[prop].includes(
+                                filterValue.value
+                            )
+                        ) {
                             return true;
                         }
                     }
