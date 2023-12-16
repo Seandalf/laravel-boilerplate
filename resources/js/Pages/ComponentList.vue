@@ -319,11 +319,19 @@
 
             <h6 class="font-bold text-base text-deep-black my-3">Inputs</h6>
 
-            <div class="flex gap-4 flex-wrap"></div>
+            <div class="flex gap-4 flex-wrap">
+                <DateInput label="Standard" />
+            </div>
 
             <h6 class="font-bold text-base text-deep-black my-3">States</h6>
 
-            <div class="flex gap-4 flex-wrap"></div>
+            <div class="flex gap-4 flex-wrap">
+                <DateInput label="Loading" is-loading />
+                <DateInput label="Disabled" disabled />
+                <DateInput label="Error" :status="ValidationStatus.Error" />
+                <DateInput label="Warning" :status="ValidationStatus.Warning" />
+                <DateInput label="Success" :status="ValidationStatus.Success" />
+            </div>
 
             <h3
                 class="font-title font-bold text-secondary-600 text-2xl pb-3 border-b border-gray-200 my-4 mt-6"
@@ -336,6 +344,10 @@
             </div>
 
             <Modal ref="defaultModal">
+                <template #body>
+                    <p class="p-6">This is some test content</p>
+                </template>
+
                 <template #footer>
                     <GenericButton
                         :size="ButtonSize.Small"
@@ -361,6 +373,7 @@ import { defineComponent, reactive, ref } from "vue";
 
 import GenericButton from "@/Components/GenericButton.vue";
 import CurrencyInput from "@/Components/Input/CurrencyInput.vue";
+import DateInput from "@/Components/Input/DateInput.vue";
 import PlainTextInput from "@/Components/Input/PlainTextInput.vue";
 import SelectInput from "@/Components/Input/SelectInput.vue";
 import Modal from "@/Components/Modal/Modal.vue";
@@ -375,6 +388,7 @@ export default defineComponent({
         PlainTextInput,
         SelectInput,
         CurrencyInput,
+        DateInput,
         Modal,
     },
     setup() {
