@@ -336,6 +336,38 @@
             <h3
                 class="font-title font-bold text-secondary-600 text-2xl pb-3 border-b border-gray-200 my-4 mt-6"
             >
+                Cards
+            </h3>
+
+            <div class="flex gap-4 flex-wrap">
+                <div class="flex-1">
+                    <Card title="Card With Title">
+                        <template #body>
+                            <div class="p-4">Some content</div>
+                        </template>
+                    </Card>
+                </div>
+
+                <div class="flex-1">
+                    <Card>
+                        <template #body>
+                            <div class="p-4">Some content</div>
+                        </template>
+                    </Card>
+                </div>
+            </div>
+
+            <h3
+                class="font-title font-bold text-secondary-600 text-2xl pb-3 border-b border-gray-200 my-4 mt-6"
+            >
+                Stat Blocks
+            </h3>
+
+            <div class="flex gap-4 flex-wrap"></div>
+
+            <h3
+                class="font-title font-bold text-secondary-600 text-2xl pb-3 border-b border-gray-200 my-4 mt-6"
+            >
                 Modals
             </h3>
 
@@ -371,6 +403,7 @@
 <script lang="ts">
 import { defineComponent, reactive, ref } from "vue";
 
+import Card from "@/Components/Card.vue";
 import GenericButton from "@/Components/GenericButton.vue";
 import CurrencyInput from "@/Components/Input/CurrencyInput.vue";
 import DateInput from "@/Components/Input/DateInput.vue";
@@ -390,6 +423,7 @@ export default defineComponent({
         CurrencyInput,
         DateInput,
         Modal,
+        Card,
     },
     setup() {
         const defaultModal = ref<typeof Modal>();
