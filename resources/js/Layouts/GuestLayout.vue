@@ -1,6 +1,6 @@
 <template>
     <div
-        class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gradient-to-br from-primary-400 to-primary-600"
+        class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gradient-to-br from-primary-500 to-secondary-500"
     >
         <div>
             <Link href="/"> Logo </Link>
